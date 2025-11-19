@@ -9,18 +9,31 @@ namespace Goatfeeder.Controls
     [RequireComponent(typeof(PlayerControler))]
     public class Player : MonoBehaviour
     {
+
         private PlayerInput _playerInput;
         private PlayerControler _playerControler;
+        private Gun_Controler _gunControler;
+
+        #region  Actions
         private InputAction _move;
         private InputAction _mousePosition;
+        private InputAction _shoot;
+        #endregion
+
+
         [SerializeField] private float speed = 5f;
 
         void Awake()
         {
             _playerInput = GetComponent<PlayerInput>();
             _playerControler = GetComponent<PlayerControler>();
+            _gunControler = GetComponent<Gun_Controler>();
+
+
             _move = _playerInput.actions["Move"];
             _mousePosition = _playerInput.actions["Point"];
+            _shoot = _playerInput.actions ["Shoot"];
+            
 
         }
         void OnEnable()
@@ -53,10 +66,12 @@ namespace Goatfeeder.Controls
 
                 _playerControler.LookAt(wordPoint);
             }
+
+            if (_shoot.IsPressed())
+            {
+                _gunControler.Shoot();
+            }
         }
         
     }
 }
-//ler o point e mostrar no console, na classe palyer controler fazer referencia ao rigidbody,
-//limpar a classe controler
-//DESAFIOOO!!!!!!! FAZER A MOVIMENTAÇÃO NO PLAYER CONTROLER!!
