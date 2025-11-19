@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7947075830629879144}
   - component: {fileID: 1666565018685994025}
   - component: {fileID: 6795535471736337197}
-  - component: {fileID: 5366061982406270507}
+  - component: {fileID: 3335800798108691447}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -90,26 +90,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5366061982406270507
-CapsuleCollider:
+--- !u!114 &3335800798108691447
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4214341952321590886}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397e03207b1854143bb07e117c51fcfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  projectileSpeed: 8

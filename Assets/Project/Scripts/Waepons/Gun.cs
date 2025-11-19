@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] Transform muzzle;
+    [SerializeField] Projectile projectile;
+    [SerializeField] float muzzleVelocity;
+    [SerializeField] float msBetweenSpawn;
+
+    private float nextSpawn;
+
+    public void Shoot()
     {
         
+         if(Time.time>nextSpawn)
+        {
+            nextSpawn = Time.time + msBetweenSpawn / 1000;
+            Projectile newProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation);
+            newProjectile.SetSpeed (muzzleVelocity);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
